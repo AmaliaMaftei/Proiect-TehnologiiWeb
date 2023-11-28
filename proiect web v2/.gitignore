@@ -1,0 +1,4 @@
+package-lock.json
+node_modules/
+action.db
+.DS_Store
