@@ -1,7 +1,7 @@
 const UserRoles = {
-    Admin: 'admin',
-    Manager: 'manager',
-    Executor: 'executor'
+    Admin: 0,
+    Manager: 1,
+    Executor: 2
 }
 
 const UserTemplate = (db, DataTypes) => {
@@ -17,11 +17,14 @@ const UserTemplate = (db, DataTypes) => {
             allowNull: false
         },
         role: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             validate: {
                 customValidate(value) {
                     if (!Object.values(UserRoles).includes(value)) {
                         throw new Error("Invalid user role");
+                    }
+                    if ((this.role === UserRoles.Executor) && (!this.manager)) {
+                        throw new Error("Manager not provided");
                     }
                 }
             },
@@ -29,13 +32,10 @@ const UserTemplate = (db, DataTypes) => {
         },
         manager: {
             type: DataTypes.INTEGER,
-            validate: {
-                customValidate(value) {
-                    if ((this.role === UserRoles.Executor) && (!!value)) {
-                        throw new Error("Mandatory for this user type");
-                    }
-                }
-            }
+        },
+        addedBy: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
     });
 };

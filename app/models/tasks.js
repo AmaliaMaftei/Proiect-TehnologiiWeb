@@ -17,6 +17,9 @@ const TaskTemplate = (db, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        description: {
+            type: DataTypes.TEXT,
+        },
         assignee: {
             type: DataTypes.INTEGER
         },
@@ -33,9 +36,7 @@ const TaskTemplate = (db, DataTypes) => {
             }
         }
     }, {
-        timestamps: true,
-        createdAt: 'creationDate',
-        updatedAt: 'updatedOn'
+        timestamps: true
     });
 }
 
