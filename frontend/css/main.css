@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.page {
+    display: flex;
+    width: 90vw;
+    height: 100vh;
+}
+
+.toolbar {
+    width: 300px;
+    padding: 50px 25px;
+    background: #eeeeee;
+}
+
+#login_form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.toolbar-item {
+    padding: 15px;
+}
+
+.user-action-btn {
+    margin: 5px;
+    padding: 5px;
+    width: 95%;
+}
+
+.content-area {
+    width: 90%;
+    display: contents;
+}
+
+.item-box {
+    margin: 50px;
+}
+
+.input-field-box {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#add-user-box {
+    margin-bottom: 50px;
+}
+
+.details-container,
+.user-container,
+.task-container {
+    margin-bottom: 20px;
+    padding: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 6px;
+    border-color: #00000066;
+    box-shadow: -2px 1px 15px #888888;
+    padding: 5mm 2mm;
+}
+
+.item-data-element {
+    margin-bottom: 1mm;
+}
+
+.rendered-form {
+    margin: 20px;
+}
+
+.formbuilder-text,
+.formbuilder-textarea,
+.formbuilder-select {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.formbuilder-text-label,
+.formbuilder-textarea-label,
+.formbuilder-select-label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+
+.formbuilder-required {
+    color: #dc3545;
+}
+
+.formbuilder-textarea {
+    resize: vertical;
+}
+
+
+.formbuilder-select select {
+    height: calc(2.25rem + 2px);
+}
+
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #004677;
+}
+
+.btn-secondary {
+    background-color: #6ae06a;
+    border-color: #5cb85c
+}
+
+.btn-secondary:hover {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}

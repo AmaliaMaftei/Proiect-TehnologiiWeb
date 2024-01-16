@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task planner</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    
+    <div class="page">
+        <div class="toolbar">
+
+            <div id="login_form">
+                <input type="text" id="username" placeholder="Username" required autocomplete="off" class="form-control">
+                <button type="button" onclick="handleLogin()" class="btn btn-primary">Login</button>
+            </div>
+
+            <div id="admin_panel" class="toolbar-item" style="display: none">
+                <h2>
+                    Hello Admin
+                </h2>
+                <div>
+                    <button type="button" class="user-action-btn" onclick="viewUsers()">View users</button>
+                </div>
+                <div>
+                    <button type="button" class="user-action-btn" onclick="displayAddUser()">Add user</button>
+                </div>
+                <div>
+                    <button type="button" class="user-action-btn" onclick="viewTasks()">View tasks</button>
+                </div>
+            </div>
+
+            <div id="manager_panel" class="toolbar-item" style="display: none;">
+                <h2>
+                    Hello Manager
+                </h2>
+                <div>
+                    <button type="button" class="user-action-btn" onclick="viewUsers()">Display workers</button>
+                </div>
+                <div>
+                    <button type="button" class="user-action-btn" onclick="displayAddUser()">Add worker</button>
+                </div>
+                <div>
+                    <button type="button" class="user-action-btn" onclick="viewTasks()">View tasks</button>
+                </div>
+                <div>
+                    <button type="button" class="user-action-btn" onclick="displayAddTask()">Add task</button>
+                </div>
+            </div>
+
+            <div id="executor_panel" class="toolbar-item" style="display: none;">
+                <h2>
+                    Hello Executor
+                </h2>
+                <div>
+                    <button type="button" class="user-action-btn" onclick="viewTasks()">View tasks</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div id="users-box" class="item-box" style="display: block;">
+                <div id="add-user-box" style="display: none;">
+                    <div id="createUserContainer" class="rendered-form">
+
+                        <div class="formbuilder-text form-group field-user-name">
+                            <label for="user-name" class="formbuilder-text-label">User name<span class="formbuilder-required">*</span></label>
+                            <input type="text" class="form-control" name="user-name" access="false" id="user-name" required>
+                        </div>
+                        <div class="formbuilder-text form-group field-user-manager">
+                            <label for="user-manager" class="formbuilder-text-label">Manager<span class="formbuilder-required">*</span></label>
+                            <input type="text" class="form-control" name="user-manager" access="false" id="user-manager" required>
+                        </div>
+                        <div class="formbuilder-select form-group field-user-role">
+                            <label for="user-role" class="formbuilder-select-label">Role<span class="formbuilder-required">*</span></label>
+                            <select class="form-control" name="user-role" id="user-role">
+                                <option value="1" selected="true" id="user-role-0">Manager</option>
+                                <option value="2" selected="true" id="user-role-1">Worker</option>
+                            </select>
+                        </div>
+                        <div class="formbuilder-button form-group field-create-user-btn">
+                            <button type="button" onclick="addUser()" class="btn-primary btn" name="create-user-btn" access="false" id="create-user-btn">Create user</button>
+                        </div>
+                    </div>                    
+                </div>
+                <div id="user-list-box" style="display: none;"></div>
+            </div>
+            <div id="tasks-box" class="item-box" style="display: block;">
+
+                <div id="add-task-box" style="display: none; ">
+                    <div id="createTaskContainer" class="rendered-form">
+                        <div class="form-group">
+                            <label for="taskTitle" class="formbuilder-text-label">Task Title<span class="formbuilder-required">*</span></label>
+                            <input type="text" id="taskTitle" name="taskTitle" class="form-control" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="taskDescription" class="formbuilder-textarea-label">Task Description<span class="formbuilder-required">*</span></label>
+                            <textarea type="textarea" id="taskDescription" name="taskDescription" class="form-control" required aria-required="true"></textarea>
+                        </div>
+                        <button type="button" onclick="event.preventDefault(); addTask()" class="btn btn-primary">Create Task</button>
+                    </div>
+                </div>
+                <div id="task-list-box" style="display: none;"></div>
+            </div>
+            <div id="single-item-box" class="item-box" style="display: block;"></div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script
+</body>
+
+</html>
